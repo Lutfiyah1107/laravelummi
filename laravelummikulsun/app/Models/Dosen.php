@@ -5,13 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Matakuliah extends Model
+class Dosen extends Model
 {
     use HasFactory;
-    protected $fillable = ['nama', 'kode', 'sks'];
 
-    public function perkuliahan()
+    protected $fillable = ['nama', 'nidn', 'email', 'alamat',];
+
+    public function perkuliahans(): HasMany
     {
         return $this->hasMany(Perkuliahan::class);
     }
 }
+
